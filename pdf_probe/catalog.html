@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symbol-Katalog (lokal)</title>
+<link rel="stylesheet" href="/catalog.css">
+</head>
+<body>
+<main>
+  <h1>Symbol-Katalog (lokal, v1)</h1>
+  <div class="badges">
+    <span class="badge ok">Nur 127.0.0.1 · lokale SQLite</span>
+    <span class="badge">Einträge aus eingefrorenen Kandidaten-Ausschnitten</span>
+    <span class="badge">Nur exakte Bildidentität teilt einen Namen</span>
+  </div>
+  <div class="card note">
+    <p><strong>Umfang / Grenze:</strong> Vorlagenfreie Grafikkandidaten +
+    lokale Ausschnitt-OCR. Kein trainiertes Symbolmodell; Logos, Abbildungen
+    oder Textreste sind mögliche Kandidaten. Textvorschläge sind unbestätigt;
+    namenlose Zeichen werden nicht automatisch klassifiziert; keine
+    Konformitätsprüfung. Labels gelten nur für exakt pixel-identische
+    Ausschnitte — Varianten/andere Skalen können eine erneute Bestätigung
+    erfordern.</p>
+    <p><strong>Einlesen:</strong> Beim Start wird nur der vorhandene Bestand geöffnet.
+    Gespeicherte Analyse-Ergebnisse werden ausschließlich über die Schaltfläche
+    „Gespeicherte Ergebnisse einlesen“ importiert. Ältere Ergebnisse mit
+    Symboltreffern registrieren dabei nur das Dokument — ihre alten
+    Vorlagentreffer werden nicht übernommen.</p>
+  </div>
+  <div class="toolbar card">
+    <input id="search" type="search" placeholder="Suche in Namen / OCR-Text" size="28">
+    <select id="state">
+      <option value="">alle Status</option>
+      <option value="proposed">Vorschlag</option>
+      <option value="approved">Bestätigt</option>
+      <option value="ignored">Kein Symbol</option>
+    </select>
+    <button id="apply">Filtern</button>
+    <button id="import">Gespeicherte Ergebnisse einlesen</button>
+    <a href="/api/matrix.csv" download>matrix.csv</a>
+    <a href="/pilot/">Dreier-Test</a>
+    <span id="status" class="muted"></span>
+  </div>
+  <div id="entries"></div>
+  <p id="empty" class="muted" hidden>Keine Einträge gefunden.</p>
+</main>
+<script src="/catalog.js"></script>
+</body>
+</html>

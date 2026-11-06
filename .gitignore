@@ -1,0 +1,31 @@
+# --- local runtime / env ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# --- local data / generated artifacts ---
+/index.html
+/label_analyse.html
+artifacts/
+references/
+models/
+.cache/
+*.pdf
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.log
+label_tree.txt
+
+# --- secrets (keep out of the repo) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
